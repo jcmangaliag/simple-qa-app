@@ -1,19 +1,17 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Simple Q&A App</title>
-</head>
-<body>
-	<h2>Ask a Question</h2>
-	<form action="/ask-question.do?author=${userName}" method="post">
-		Enter the question: <input type="text" name="questionDetails" /> <input
-			type="submit" value="Post Question">
-	</form>
+<%@ include file="../common/header.jspf"%>
+<%@ include file="../common/navigation.jspf"%>
 
-	<a href="/list-qa.do">Go Back</a>
-</body>
-</html>
+<div class="container" style="margin-top: 100px;">
+	<h2>Ask a Question</h2>
+	<hr />
+	<form action="/ask-question.do?author=${userName}" method="post">
+		<fieldset class="form-group">
+			<label>Enter your question</label> <input type="text"
+				name="questionDetails" class="form-control" />
+		</fieldset>
+
+		<input type="submit" value="Post Question" class="btn btn-success" />
+	</form>
+</div>
+
+<%@ include file="../common/footer.jspf"%>

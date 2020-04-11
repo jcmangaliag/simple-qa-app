@@ -1,20 +1,22 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Simple Q&A App</title>
-</head>
-<body>
-	<h2>Answer this question</h2>
-	<h4>${question.details} - ${question.author}</h4>
-	<form action="/answer-question.do?author=${userName}&questionId=${question.id}" method="post">
-		Answer: <input type="text" name="answerDetails" /> <input
-			type="submit" value="Post Answer">
-	</form>
+<%@ include file="../common/header.jspf"%>
+<%@ include file="../common/navigation.jspf"%>
 
-	<a href="/list-qa.do">Go Back</a>
-</body>
-</html>
+<div class="container" style="margin-top: 100px;">
+	<h2>Answer this question</h2>
+	<hr />
+	<div style="padding: 10px; margin: 10px; background-color: #DCDCDC;">
+		<h5 style="font-weight: bold">${question.details}</h5>
+		<p class="font-italic">posted by ${question.author}</p>
+	</div>
+	<form
+		action="/answer-question.do?author=${userName}&questionId=${question.id}"
+		method="post">
+		<fieldset class="form-group">
+			<label>Enter your answer</label> <input type="text" name="answerDetails"
+				class="form-control" />
+		</fieldset>
+		<input type="submit" value="Post Answer" class="btn btn-success" />
+	</form>
+</div>
+
+<%@ include file="../common/footer.jspf"%>
