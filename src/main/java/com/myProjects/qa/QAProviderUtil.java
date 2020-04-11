@@ -17,23 +17,22 @@ public class QAProviderUtil {
         List<Question> questions = new ArrayList<>();
         
         Question question1 = new Question(generateId(), 
-                "What is the capital of Thailand?", "markEric01");
+                "What is the capital of Mongolia?", "markEric02");
         question1.includeAnswer(new Answer(generateId(), 
-                "BangCock!", "thomas_Angelo"));
+                "Ulaanbaatar!", "thomas_Angelo"));
         
         Question question2 = new Question(generateId(), 
                 "How to create a web application using Java?", "hacker_101");
         
         Question question3 = new Question(generateId(), 
-                "Who is the greatest programmer of all time?", "markEric01");
+                "Who is the greatest programmer of all time?", "markEric02");
         question3.includeAnswer(new Answer(generateId(), 
                 "Bill Gates period.", "techie"));
         question3.includeAnswer(new Answer(generateId(), 
                 "Steve Jobs :D", "anne_25"));
         question3.includeAnswer(new Answer(generateId(), 
-                "Lol what are u saying. Mark Zuckerberg is the greatest ever. "
-                + "He created the most famous social media in the world which is "
-                + "Facebook.", "hacker_101"));
+                "Lol what are u saying? Mark Zuckerberg is the greatest ever. "
+                + "He created the most popular social media which is Facebook.", "hacker_101"));
 
         questions.add(question1);
         questions.add(question2);

@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
     
+    private LoginService loginService = new LoginService();
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
@@ -20,7 +22,15 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
-        request.getSession().setAttribute("userName", request.getParameter("userName"));
+        String userName = request.getParameter("userName");
+        
+        if (!loginService.isUserNameValid(userName)) {          
+            request.setAttribute("errorMessage", "Invalid user name!");
+            request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+            return;
+        }
+        
+        request.getSession().setAttribute("userName", userName);
         response.sendRedirect("/list-qa.do");
     }
 }
