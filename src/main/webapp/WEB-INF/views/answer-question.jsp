@@ -12,8 +12,8 @@
 		action="/answer-question.do?author=${userName}&questionId=${question.id}"
 		method="post">
 		<fieldset class="form-group">
-			<label>Enter your answer</label> <input type="text" name="answerDetails"
-				class="form-control" />
+			<label>Enter your answer</label> <input type="text"
+				name="answerDetails" class="form-control" />
 		</fieldset>
 		<input type="submit" value="Post Answer" class="btn btn-success" />
 	</form>

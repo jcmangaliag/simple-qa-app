@@ -10,6 +10,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @WebFilter("*.do")
 public class LoginRequiredFilter implements Filter {
@@ -27,6 +28,11 @@ public class LoginRequiredFilter implements Filter {
         
         if (loggedInUser == null) {
             request.getRequestDispatcher("/login.do").forward(servletRequest, servletResponse);
+            return;
+        }
+        
+        if(request.getRequestURI().contains("/login.do")) {
+            ((HttpServletResponse) servletResponse).sendRedirect("/list-qa.do");
             return;
         }
         

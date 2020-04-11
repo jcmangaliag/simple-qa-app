@@ -2,12 +2,16 @@
 <%@ include file="../common/navigation.jspf"%>
 
 <div class="container" style="margin-top: 100px;">
-	<h2>Welcome back ${userName}</h2>
+	<h2>
+		Welcome back <span style="font-weight: bold">${userName}</span>
+	</h2>
 
 	<table class="table table-striped">
 		<thead>
-			<th><h3>Questions for you</h3></th>
-			<th></th>
+			<tr>
+				<th><h3>Questions for you</h3></th>
+				<th></th>
+			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${questions}" var="question">
@@ -17,8 +21,10 @@
 							test="${not empty question.answers}">
 							<table class="table">
 								<thead class="table-active">
-									<th><h5>Answers</h5></th>
-									<th></th>
+									<tr>
+										<th><h5>Answers</h5></th>
+										<th></th>
+									</tr>
 								</thead>
 								<tbody>
 									<c:forEach items="${question.answers}" var="answer">
