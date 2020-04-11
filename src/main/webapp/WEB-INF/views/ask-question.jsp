@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Ask a Question - Simple QA App</title>
+<title>Simple Q&A App</title>
 </head>
 <body>
 	<h2>Ask a Question</h2>
